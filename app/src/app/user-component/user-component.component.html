@@ -1,0 +1,18 @@
+<div class="button-row">
+    <mat-form-field>
+        <mat-label>Country List</mat-label>
+        <mat-select (selectionChange)="updateUserList($event.value)">
+            <mat-option *ngFor="let country of countries" [value]="country.name">
+                {{country.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button class='mat-button-base' mat-raised-button color="primary" (click)="refreshCountryList()">Refresh</button>
+</div>
+
+
+            <mat-card *ngFor="let user of userlist">
+                <mat-card-title>Name : {{user.name}}</mat-card-title>
+                <mat-card-title>Gender : {{user.gender}}</mat-card-title>
+                <mat-card-title>Email : {{user.email}}</mat-card-title>
+            </mat-card>
